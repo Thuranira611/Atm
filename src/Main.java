@@ -38,21 +38,5 @@ public class Main {
 
    }
 
-   static class  Handler{
-      static int accountBalance;
 
-       static Scanner scanner = new Scanner(System.in);
-       public  static void case1(){
-
-           System.out.println("Enter amount to Deposit:");
-           int deposit ;
-           deposit = scanner.nextInt();
-           accountBalance += deposit;
-           System.out.println(deposit);
-       }
-       public  static  void case2(){
-           System.out.println("Your account balance is:"+accountBalance);
-
-       }
-   }
 }
