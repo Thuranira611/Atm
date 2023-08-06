@@ -53,12 +53,12 @@ public class Main {
            long deposit = scanner.nextLong();
            accountBalance += deposit;
            System.out.println("Deposit of KSh "+deposit+", was a success");
-           System.out.println("Your account balance is:"+accountBalance);
+           System.out.println("Your account balance is Ksh :"+accountBalance);
 
            checker();
            }
        public  static  void case2(){
-           System.out.println("Your account balance is:"+accountBalance);
+           System.out.println("Your account balance is Ksh :"+accountBalance);
 
            checker();
 
@@ -107,7 +107,7 @@ public class Main {
            }
 
            System.out.println("Ksh "+transfer+" sent to your mobile number +254******532 via Mpesa:");
-           System.out.println("Your account balance is:"+accountBalance);
+           System.out.println("Your account balance is Ksh :"+accountBalance);
 
            checker();
 
