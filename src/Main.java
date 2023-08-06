@@ -48,10 +48,19 @@ public class Main {
       static long accountBalance;
        static Scanner scanner = new Scanner(System.in);
        public  static void case1(){
+           long deposit;
 
-           System.out.println("Enter amount to Deposit:");
-           long deposit = scanner.nextLong();
-           accountBalance += deposit;
+           while (true){
+               System.out.println("Enter amount to Deposit:");
+               deposit = scanner.nextLong();
+               if (deposit<0 || deposit==0){
+                   System.out.println("Invalid amount");
+               }
+               else {
+                   accountBalance += deposit;
+                   break;
+               }
+           }
            System.out.println("Deposit of KSh "+deposit+", was a success");
            System.out.println("Your account balance is Ksh "+accountBalance);
 
@@ -71,6 +80,8 @@ public class Main {
                 withdraw = scanner.nextLong();
                if(accountBalance==0){
                    System.out.println("Account balance is '0',Deposit some amount and try again");
+               } else if (withdraw<=0) {
+                   System.out.println("Invalid amount");
                } else if (withdraw>accountBalance){
                System.out.println("Account balance is low,transaction cancelled...");
            }
@@ -95,6 +106,8 @@ public class Main {
 
                 if(accountBalance==0){
                     System.out.println("Account balance is '0',Deposit some amount and try again");
+                } else if (transfer<=0) {
+                    System.out.println("Invalid amount");
                 } else if (transfer>limit) {
                     System.out.println("You can only transfer amount less than 'Ksh 990,000");
                 } else if (transfer>accountBalance){
