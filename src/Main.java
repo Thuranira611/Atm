@@ -80,6 +80,8 @@ public class Main {
                 withdraw = scanner.nextLong();
                if(accountBalance==0){
                    System.out.println("Account balance is '0',Deposit some amount and try again");
+                   int i = 0;
+                   System.exit(i);
                } else if (withdraw<=0) {
                    System.out.println("Invalid amount");
                } else if (withdraw>accountBalance){
@@ -106,6 +108,8 @@ public class Main {
 
                 if(accountBalance==0){
                     System.out.println("Account balance is '0',Deposit some amount and try again");
+                    int i = 0;
+                    System.exit(i);
                 } else if (transfer<=0) {
                     System.out.println("Invalid amount");
                 } else if (transfer>limit) {
