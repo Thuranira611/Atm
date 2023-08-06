@@ -52,6 +52,7 @@ public class Main {
            System.out.println("Enter amount to Deposit:");
            long deposit = scanner.nextLong();
            accountBalance += deposit;
+           System.out.println("Deposit of KSh "+deposit+", was a success");
            System.out.println("Your account balance is:"+accountBalance);
 
            checker();
@@ -63,16 +64,30 @@ public class Main {
 
        }
        public  static  void case3(){
-           System.out.println("Enter amount to Withdraw:");
-           long withdraw = scanner.nextLong();
-           accountBalance-=withdraw;
-           System.out.println("Your account balance is:"+accountBalance);
+           long withdraw;
 
+           while (true){
+               System.out.println("Enter amount to Withdraw:");
+                withdraw = scanner.nextLong();
+               if(accountBalance==0){
+                   System.out.println("Account balance is '0',Deposit some amount and try again");
+               } else if (withdraw>accountBalance){
+               System.out.println("Account balance is low,transaction cancelled...");
+           }
+           else if(withdraw<accountBalance){ //made sure account balance is not 0.
+               accountBalance-= withdraw;
+               break;
+           }
+
+           }
+           System.out.println("Withdraw of Ksh "+withdraw+", was a success");
+           System.out.println("Your account balance is Ksh :"+accountBalance);
            checker();
        }
 
        public static  void case4(){
            long transfer;
+           int limit=990000;
            while (true){
 
                System.out.println("Enter amount to transfer to +254******532 via Mpesa:");
@@ -80,7 +95,8 @@ public class Main {
 
                 if(accountBalance==0){
                     System.out.println("Account balance is '0',Deposit some amount and try again");
-                    break;
+                } else if (transfer>limit) {
+                    System.out.println("You can only transfer amount less than 'Ksh 990,000");
                 } else if (transfer>accountBalance){
                     System.out.println("Account balance is low,transaction cancelled...");
                 }
@@ -90,7 +106,7 @@ public class Main {
                 }
            }
 
-           System.out.println(transfer+" sent to your mobile number +254******532 via Mpesa:");
+           System.out.println("Ksh "+transfer+" sent to your mobile number +254******532 via Mpesa:");
            System.out.println("Your account balance is:"+accountBalance);
 
            checker();
