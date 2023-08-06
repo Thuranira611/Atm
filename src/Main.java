@@ -35,24 +35,12 @@ public class Main {
        System.out.println("Enter an option:");
 
        byte option= scanner.nextByte();
-       switch (option){
-           case 1:
-               Handler.case1();
-               break;
-           case 2:
-               Handler.case2();
-               break;
-           case 3:
-               System.out.println("Enter amount to Withdraw:");
-
-               break;
-           case 4:
-               System.out.println("Enter amount to transfer to +254******532 via Mpesa:");
-
-               break;
-           default:
-               System.out.println("Invalid option");
-               break;
+       switch (option) {
+           case 1 -> Handler.case1();
+           case 2 -> Handler.case2();
+           case 3 -> System.out.println("Enter amount to Withdraw:");
+           case 4 -> System.out.println("Enter amount to transfer to +254******532 via Mpesa:");
+           default -> System.out.println("Invalid option");
        }
    }
 
