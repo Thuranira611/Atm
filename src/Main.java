@@ -25,8 +25,8 @@ public class Main {
  class Options{
    public static void options(){
        System.out.println("*****Choose an option*****");
-       System.out.println("1.Check account balance");
-       System.out.println("2.Deposit");
+       System.out.println("1.Deposit");
+       System.out.println("2.Check account balance");
        System.out.println("3.Withdraw");
        System.out.println("4.Transfer money to my mobile phone");
        Scanner scanner = new Scanner(System.in);
@@ -35,23 +35,23 @@ public class Main {
        System.out.println("Enter an option:");
 
        byte option= scanner.nextByte();
-       switch (option) {
-           case 1 -> Handler.case1();
-           case 2 -> Handler.case2();
-           case 3 -> System.out.println("Enter amount to Withdraw:");
-           case 4 -> System.out.println("Enter amount to transfer to +254******532 via Mpesa:");
-           default -> System.out.println("Invalid option");
-       }
+
    }
 
    static class  Handler{
+      static int accountBalance;
+
        static Scanner scanner = new Scanner(System.in);
        public  static void case1(){
-           System.out.println("Your account balance is:");
+
+           System.out.println("Enter amount to Deposit:");
+           int deposit ;
+           deposit = scanner.nextInt();
+           accountBalance += deposit;
+           System.out.println(deposit);
        }
        public  static  void case2(){
-           System.out.println("Enter amount to Deposit:");
-           long Deposit = scanner.nextLong();
+           System.out.println("Your account balance is:"+accountBalance);
 
        }
    }
