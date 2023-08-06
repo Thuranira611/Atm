@@ -72,14 +72,16 @@ public class Main {
        }
 
        public static  void case4(){
-           System.out.println("Enter amount to transfer to +254******532 via Mpesa:");
-           long transfer= scanner.nextLong();
+           long transfer;
            while (true){
 
                System.out.println("Enter amount to transfer to +254******532 via Mpesa:");
                 transfer= scanner.nextLong();
 
-                if (transfer>accountBalance){
+                if(accountBalance==0){
+                    System.out.println("Account balance is '0',Deposit some amount and try again");
+                    break;
+                } else if (transfer>accountBalance){
                     System.out.println("Account balance is low,transaction cancelled...");
                 }
                 else if(transfer<accountBalance){ //made sure account balance is not 0.
