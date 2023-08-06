@@ -54,36 +54,12 @@ public class Main {
            accountBalance += deposit;
            System.out.println("Your account balance is:"+accountBalance);
 
-           while(true){
-               System.out.print("Type '1' to continue with transaction or '2' to exit:");
-               byte typed = scanner.nextByte();
-               if(typed ==1){
-                   Options.options();
-                   break;
-               }else if (typed==2){
-                   System.out.println("Program closing...");
-                   break;
-               }else{
-                   System.out.println("Invalid input");
-               }
-           }
+           checker();
            }
        public  static  void case2(){
            System.out.println("Your account balance is:"+accountBalance);
 
-           while(true){
-               System.out.print("Type '1' to continue with transaction or '2' to exit:");
-               byte typed = scanner.nextByte();
-               if(typed ==1){
-                   Options.options();
-                   break;
-               }else if (typed==2){
-                   System.out.println("Program closing...");
-                   break;
-               }else{
-                   System.out.println("Invalid input");
-               }
-           }
+           checker();
 
        }
        public  static  void case3(){
@@ -92,28 +68,36 @@ public class Main {
            accountBalance-=withdraw;
            System.out.println("Your account balance is:"+accountBalance);
 
-           while(true){
-               System.out.print("Type '1' to continue with transaction or '2' to exit:");
-               byte typed = scanner.nextByte();
-               if(typed ==1){
-                   Options.options();
-                   break;
-               }else if (typed==2){
-                   System.out.println("Program closing...");
-                   break;
-               }else{
-                   System.out.println("Invalid input");
-               }
-           }
+           checker();
        }
 
        public static  void case4(){
            System.out.println("Enter amount to transfer to +254******532 via Mpesa:");
            long transfer= scanner.nextLong();
-           accountBalance-= transfer;
+           while (true){
+
+               System.out.println("Enter amount to transfer to +254******532 via Mpesa:");
+                transfer= scanner.nextLong();
+
+                if (transfer>accountBalance){
+                    System.out.println("Account balance is low,transaction cancelled...");
+                }
+                else if(transfer<accountBalance){ //made sure account balance is not 0.
+                    accountBalance-= transfer;
+                    break;
+                }
+           }
+
            System.out.println(transfer+" sent to your mobile number +254******532 via Mpesa:");
            System.out.println("Your account balance is:"+accountBalance);
 
+           checker();
+
+
+       }
+
+//checker function
+       public  static  void checker(){
            while(true){
                System.out.print("Type '1' to continue with transaction or '2' to exit:");
                byte typed = scanner.nextByte();
@@ -127,11 +111,7 @@ public class Main {
                    System.out.println("Invalid input");
                }
            }
-
-
        }
-
-
 
        }
 
